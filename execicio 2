@@ -1,0 +1,26 @@
+// 2. Jogo de Adivinhação
+// Escreva um script que gere um número aleatório de 1 a 100 e peça ao
+// usuário, para adivinhar. Use while para repetir até acertar, contando
+// tentativas e exibindo “mais alto” ou “mais baixo” a cada palpite errado.
+const prompt = require('prompt-sync')();
+const numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+let tentativas = 0;
+const maxTentativas = 100;
+
+while (tentativas < maxTentativas) {
+    const palpite = parseInt(prompt("Adivinhe o número (1-100):"));
+    tentativas++;
+
+    if (palpite === numeroAleatorio) {
+        console.log(`Legal! Você acertou em ${tentativas} tentativas.`);
+        break; // Encerra o loop se acertar
+    } else if (palpite < numeroAleatorio) {
+        console.log("Mais alto!");
+    } else {
+        console.log("Mais baixo!");
+    }
+
+    if (tentativas === maxTentativas) {
+        console.log(`Fim do jogo! O número era ${numeroAleatorio}.`);
+    }
+}
