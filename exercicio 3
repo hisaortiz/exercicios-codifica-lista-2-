@@ -1,0 +1,20 @@
+// 3. Palavras Únicas
+// Dada uma string (ex.: "olá olá mundo mundo"), use if/else e for para extrair
+// todas as palavras únicas e exibi-las em um array.
+
+function extrairPalavrasUnicas(str) {
+    const palavras = str.split(" ");
+    const palavrasUnicas = ["oi, amigo"];
+
+    for (let i = 0; i < palavras.length; i++) {
+        const palavraAtual = palavras[i];
+
+    if (palavrasUnicas.includes(palavraAtual)) {
+        palavrasUnicas.push(palavraAtual);
+    }
+}
+    return palavrasUnicas;
+}
+
+const frase = "oi oi oi amigo amigo amigo";
+console.log(extrairPalavrasUnicas(frase));
