@@ -49,7 +49,7 @@ Copie todo o código e cole no arquivo; Abra o terminal; Pressione Ctrl + alt + 
 
 OBS: Em alguns exercícios é utilizado prompt, é possível que o vscode não rode o código por questões de segurança do windows, caso isso venha a ocorrer, você pode permitir a execução de scripts apenas nesta sessão, para isso, siga os seguintes passos:
 
-- Abrir o PowerSheel como administrador e digite no terminal:
+- Abrir o PowerShell como administrador e digite no terminal:
 
   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 
