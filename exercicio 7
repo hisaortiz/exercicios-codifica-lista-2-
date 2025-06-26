@@ -1,0 +1,19 @@
+// 7. Mapeamento e Ordenação
+// Dado um array produtos = [{ nome, preco }, ...], crie uma função que
+// retorne um novo array apenas com os nomes, ordenados por preço
+// crescente, usando map, sort.
+
+const produtos = [
+    { nome: "sabonete", preco: 2.70 },
+    { nome: "esponja", preco: 5.90 },
+    { nome: "shampoo", preco: 23.90 },
+    { nome: "condicionador", preco: 15.90 },
+    { nome: "oleo corporal", preco: 14.90 },
+    { nome: "creme hidratante", preco: 32.50}
+];
+
+const nomesOrdenados = produtos      
+    .sort((a, b) => b.preco - a.preco)
+    .map(produto => produto.nome);
+
+    console.log(nomesOrdenados);
