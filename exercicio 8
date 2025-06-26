@@ -1,0 +1,38 @@
+// 8. Agrupamento por Propriedade
+// Em vendas = [{ cliente, total }, ...], use reduce para gerar um objeto onde
+// cada chave é um cliente e o valor é a soma de todos os seus total.
+
+const vendas = [
+    { cliente: "Gabriel", total: 85.90 },
+    { cliente: "Martin", total: 235.80 },
+    { cliente: "Hisa", total: 330.50 },
+];
+
+const agrupado = vendas.reduce((acc, venda) => {
+    if (!acc[venda.cliente]) {
+        acc[venda.cliente] = 0;
+    }
+    acc[venda.cliente] += venda.total;
+    return acc;
+}, {});
+
+console.log(agrupado);
+
+//ou
+
+// const vendas = [
+//     { cliente: "Gabriel", total: "85.90" },
+//     { cliente: "Martin", total: "235.80" },
+//     { cliente: "Hisa", total: "330.50" },
+// ];
+
+// const agrupado = vendas.reduce((acc, venda) => {
+//     const totalNum = parseFloat(venda.total.replace(',', '.'));
+//     if (!acc[venda.cliente]) {
+//         acc[venda.cliente] = 0;
+//     }
+//     acc[venda.cliente] += totalNum;
+//     return acc;
+// }, {});
+
+// console.log(agrupado);
