@@ -1,0 +1,29 @@
+// 6. Memoization
+// Implemente function memoize(fn) que armazene em cache chamadas
+// anteriores de fn (por argumentos), retornando resultados instantâneos em
+// repetidas invocações.
+
+function memoize(fn) {
+    const cache = {};
+    return function(...args){
+        const chave = JSON.stringify(args);
+        if (cache in cache) {
+            return cache[chave];
+        }
+        const resultado = fn(...args);
+        cache[chave] = resultado;
+
+        return resultado;
+    };
+}
+
+function somaDemorada(a,b) {
+    console.log("Calculando...");
+    return a + b;
+}
+
+const somaMemoizada = memoize(somaDemorada);
+
+console.log(somaMemoizada(2, 3));
+console.log(somaMemoizada(2, 3)); 
+console.log(somaMemoizada(5, 5)); 
